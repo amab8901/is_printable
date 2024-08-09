@@ -5,6 +5,7 @@ pub trait IsPrintable {
 }
 
 impl IsPrintable for char {
+    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let escape_debug = self.escape_debug().to_string();
 
@@ -22,6 +23,7 @@ impl IsPrintable for char {
 }
 
 impl IsPrintable for dyn Deref<Target = str> {
+    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let is_printable = self.chars().all(|ch| ch.is_printable());
 
@@ -30,6 +32,7 @@ impl IsPrintable for dyn Deref<Target = str> {
 }
 
 impl IsPrintable for String {
+    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let is_printable = self.chars().all(|ch| ch.is_printable());
 
@@ -38,6 +41,7 @@ impl IsPrintable for String {
 }
 
 impl IsPrintable for str {
+    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let is_printable = self.chars().all(|ch| ch.is_printable());
 
@@ -46,6 +50,7 @@ impl IsPrintable for str {
 }
 
 impl IsPrintable for &String {
+    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let is_printable = self.chars().all(|ch| ch.is_printable());
 
@@ -54,6 +59,7 @@ impl IsPrintable for &String {
 }
 
 impl IsPrintable for &str {
+    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let is_printable = self.chars().all(|ch| ch.is_printable());
 
