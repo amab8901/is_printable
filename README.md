@@ -1,5 +1,5 @@
 
-Determines whether a given type is printable.
+Determines whether a given value is printable.
 
 Printable example:
 ``` rust
