@@ -1,7 +1,7 @@
 [package]
 name = "is_printable"
-version = "0.0.7"
-description = "Determine whether a given character is printable."
+version = "0.0.8"
+description = "Determine whether a given text-based value is printable."
 keywords = ["is_printable", "char", "utf8", "ascii", "printable"]
 # categories = []
 repository = "https://github.com/amab8901/is_printable"
