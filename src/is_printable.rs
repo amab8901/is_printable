@@ -67,3 +67,24 @@ pub fn is_special_printable(escape_debug: &str) -> bool {
     let is_special_printable = matches!(character, '\'' | '\"' | '\\' | '/');
     is_special_printable
 }
+
+#[cfg(test)]
+mod test {
+    use super::IsPrintable;
+
+    #[test]
+    pub fn unprintable() {
+        let character = '\u{7}';
+
+        let is_printable = character.is_printable();
+        assert!(!is_printable);
+    }
+
+    #[test]
+    pub fn printable() {
+        let character = '\u{30}';
+
+        let is_printable = character.is_printable();
+        assert!(is_printable);
+    }
+}
