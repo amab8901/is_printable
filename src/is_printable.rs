@@ -6,9 +6,16 @@ pub trait IsPrintable {
 
 impl IsPrintable for char {
     fn is_printable(&self) -> bool {
-        let formatted_char = format!("{self:?}");
+        let escape_debug = self.escape_debug().to_string();
 
-        let is_printable = !formatted_char.ends_with('}');
+        let is_special_printable = is_special_printable(&escape_debug);
+
+        let escapes = escape_debug.starts_with('\\');
+
+        let single_char = escape_debug.len() == 1;
+        let typical_printable = !escapes || single_char;
+
+        let is_printable = typical_printable || is_special_printable;
 
         is_printable
     }
@@ -52,4 +59,11 @@ impl IsPrintable for &str {
 
         is_printable
     }
+}
+
+pub fn is_special_printable(escape_debug: &str) -> bool {
+    let character = escape_debug.chars().last().unwrap();
+
+    let is_special_printable = matches!(character, '\'' | '\"' | '\\' | '/');
+    is_special_printable
 }
