@@ -1,0 +1,15 @@
+[package]
+name = "is_printable"
+version = "0.0.1"
+description = "Identify whether a given character is printable."
+keywords = ["is_printable", "char", "utf8", "ascii", "printable"]
+categories = ["no-std"]
+repository = "https://github.com/amab8901/is_printable"
+documentation = "https://docs.rs/is_printable"
+authors = ["Amir Abdin <amab8901@protonmail.com>"]
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+edition = "2021"
+rust-version = "1.75.0"
+
+[dependencies]
