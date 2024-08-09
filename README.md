@@ -10,7 +10,7 @@ Printable example:
 
 Unprintable example:
 ```rust
-    let bell = '␇'
+    let bell = '\u{7}'
     let is_printable = bell.is_printable();
     assert_eq!(is_printable, false);
 ```
