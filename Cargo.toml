@@ -1,6 +1,6 @@
 [package]
 name = "is_printable"
-version = "0.0.4"
+version = "0.0.5"
 description = "Identify whether a given character is printable."
 keywords = ["is_printable", "char", "utf8", "ascii", "printable"]
 # categories = []
