@@ -1,2 +1,3 @@
 
-Determines whether a given `char` is printable.
+Determines whether a given type is printable.
+
