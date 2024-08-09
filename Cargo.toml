@@ -13,3 +13,21 @@ edition = "2021"
 rust-version = "1.80.0"
 
 [dependencies]
+
+
+
+[lints.clippy]
+let_and_return = "allow"
+module_name_repetitions = "allow"
+similar_names = "allow"
+must_use_candidate = "allow"
+missing_inline_inpublic_items = "allow"
+std_instead_of_core = "allow"
+non_exhaustive_structs = "allow"
+mod_module_files = "allow"
+self_named_module_files = "allow"
+too_many_arguments = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+
+pedantic = { level = "warn", priority = -1 }
