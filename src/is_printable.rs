@@ -96,10 +96,8 @@ mod test {
 
     #[test]
     /// Run this with `cargo t visual_inspection -- --nocapture`.
-    pub fn visual_inspection() { 
+    pub fn visual_inspection() {
         use std::{thread::sleep, time::Duration};
-
-        dbg!("lol");
 
         use colored::*;
 
@@ -107,8 +105,6 @@ mod test {
         // let min_value = 75;
         // let max_value = 120;
         let max_value = 0x99_999;
-
-        println!("lol");
 
         for unicode in min_value..=max_value {
             let Some(character) = char::from_u32(unicode) else {
@@ -129,13 +125,6 @@ mod test {
             println!();
             println!();
             sleep(Duration::from_millis(100));
-        }
-
-        pub fn is_special_printable(escape_debug: &str) -> bool {
-            let character = escape_debug.chars().last().unwrap();
-
-            let is_special_printable = matches!(character, '\'' | '\"' | '\\' | '/');
-            is_special_printable
         }
     }
 }
