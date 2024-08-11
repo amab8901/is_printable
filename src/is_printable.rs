@@ -9,19 +9,12 @@ impl IsPrintable for char {
     fn is_printable(&self) -> bool {
         let escape_debug = self.escape_debug().to_string();
 
-        let is_typical_printable = is_typical_printable(&escape_debug);
+        let is_typical_printable = self.escape_debug().count() == 1;
         let is_special_printable = is_special_printable(&escape_debug);
         let is_printable = is_typical_printable || is_special_printable;
 
         is_printable
     }
-}
-
-fn is_typical_printable(escape_debug: &str) -> bool {
-    let escapes = escape_debug.starts_with('\\');
-    let typical_printable = !escapes;
-
-    typical_printable
 }
 
 fn is_special_printable(escape_debug: &str) -> bool {
