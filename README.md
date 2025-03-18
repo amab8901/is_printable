@@ -1,5 +1,7 @@
 
-# Determines whether a given text-based value is printable
+# is_printable
+
+Determines whether a given text-based value is printable
 
 ## Printable example
 
