@@ -1,7 +1,8 @@
 
-Determines whether a given text-based value is printable.
+# Determines whether a given text-based value is printable
 
 Printable example:
+
 ``` rust
     let hello = "hello";
     let is_printable = hello.is_printable();
@@ -9,6 +10,7 @@ Printable example:
 ```
 
 Unprintable example:
+
 ```rust
     let bell = '\u{7}'
     let is_printable = bell.is_printable();
