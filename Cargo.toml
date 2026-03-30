@@ -1,8 +1,8 @@
 [package]
 name = "is_printable"
 version = "0.1.2"
-edition = "2021"
-rust-version = "1.80.0"
+edition = "2024"
+rust-version = "1.94.0"
 description = "Determine whether a given text-based value is printable."
 documentation = "https://docs.rs/is_printable"
 readme = "README.md"
