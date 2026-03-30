@@ -43,21 +43,10 @@ impl IsPrintable for str {
     }
 }
 
-impl IsPrintable for &String {
+impl<T: ?Sized + IsPrintable> IsPrintable for &T {
     /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
-        let is_printable = self.chars().all(|ch| ch.is_printable());
-
-        is_printable
-    }
-}
-
-impl IsPrintable for &str {
-    /// Returns `true` if `self` is printable.
-    fn is_printable(&self) -> bool {
-        let is_printable = self.chars().all(|ch| ch.is_printable());
-
-        is_printable
+        (**self).is_printable()
     }
 }
 
