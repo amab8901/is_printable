@@ -1,4 +1,5 @@
-use std::ops::Deref;
+use alloc::string::String;
+use core::ops::Deref;
 
 pub trait IsPrintable {
     fn is_printable(&self) -> bool;
