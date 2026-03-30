@@ -1,4 +1,3 @@
-use alloc::string::String;
 use core::ops::Deref;
 
 pub trait IsPrintable {
@@ -14,12 +13,6 @@ impl IsPrintable for char {
 }
 
 impl IsPrintable for dyn Deref<Target = str> {
-    fn is_printable(&self) -> bool {
-        self.chars().all(|ch| ch.is_printable())
-    }
-}
-
-impl IsPrintable for String {
     fn is_printable(&self) -> bool {
         self.chars().all(|ch| ch.is_printable())
     }
