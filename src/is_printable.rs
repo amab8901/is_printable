@@ -63,16 +63,23 @@ impl IsPrintable for &str {
 
 #[cfg(test)]
 mod test {
+
     use super::IsPrintable;
 
     #[test]
     fn unprintable() {
         assert!(!'\u{7}'.is_printable());
+        assert!(!'\u{7}'.to_string().is_printable());
+        assert!(!'\u{7}'.to_string().as_str().is_printable());
+        assert!(!(*'\u{7}'.to_string().as_str()).is_printable());
     }
 
     #[test]
     fn printable() {
         assert!('\u{30}'.is_printable());
+        assert!('\u{30}'.to_string().is_printable());
+        assert!('\u{30}'.to_string().as_str().is_printable());
+        assert!((*'\u{30}'.to_string().as_str()).is_printable());
     }
 
     #[test]
