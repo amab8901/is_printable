@@ -85,13 +85,10 @@ mod test {
     #[test]
     /// Run this with `cargo t visual_inspection -- --nocapture`.
     fn visual_inspection() {
+        use colored::*;
         use std::{thread::sleep, time::Duration};
 
-        use colored::*;
-
         let min_value = 0x1;
-        // let min_value = 75;
-        // let max_value = 120;
         let max_value = 0x99_999;
 
         for unicode in min_value..=max_value {
