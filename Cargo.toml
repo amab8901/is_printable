@@ -1,32 +1,30 @@
 [package]
 name = "is_printable"
 version = "0.1.2"
-description = "Determine whether a given text-based value is printable."
-keywords = ["is_printable", "char", "utf8", "ascii", "printable"]
-# categories = []
-repository = "https://github.com/amab8901/is_printable"
-documentation = "https://docs.rs/is_printable"
-authors = ["Amir Abdin <amab8901@protonmail.com>"]
-readme = "README.md"
-license = "MIT OR Apache-2.0"
 edition = "2021"
 rust-version = "1.80.0"
+description = "Determine whether a given text-based value is printable."
+documentation = "https://docs.rs/is_printable"
+readme = "README.md"
+repository = "https://github.com/amab8901/is_printable"
+license = "MIT OR Apache-2.0"
+keywords = ["ascii", "char", "is_printable", "printable", "utf8"]
 
 [dev-dependencies]
 colored = "2.1.0"
 
 [lints.clippy]
 let_and_return = "allow"
-module_name_repetitions = "allow"
-similar_names = "allow"
-must_use_candidate = "allow"
-missing_inline_inpublic_items = "allow"
-std_instead_of_core = "allow"
-non_exhaustive_structs = "allow"
-mod_module_files = "allow"
-self_named_module_files = "allow"
-too_many_arguments = "allow"
 missing_errors_doc = "allow"
+missing_inline_inpublic_items = "allow"
 missing_panics_doc = "allow"
+mod_module_files = "allow"
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+non_exhaustive_structs = "allow"
+self_named_module_files = "allow"
+similar_names = "allow"
+std_instead_of_core = "allow"
+too_many_arguments = "allow"
 
 pedantic = { level = "warn", priority = -1 }
