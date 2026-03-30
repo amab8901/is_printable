@@ -66,7 +66,7 @@ mod test {
     use super::IsPrintable;
 
     #[test]
-    pub fn unprintable() {
+    fn unprintable() {
         let character = '\u{7}';
 
         let is_printable = character.is_printable();
@@ -74,7 +74,7 @@ mod test {
     }
 
     #[test]
-    pub fn printable() {
+    fn printable() {
         let character = '\u{30}';
 
         let is_printable = character.is_printable();
@@ -83,7 +83,7 @@ mod test {
 
     #[test]
     /// Run this with `cargo t visual_inspection -- --nocapture`.
-    pub fn visual_inspection() {
+    fn visual_inspection() {
         use std::{thread::sleep, time::Duration};
 
         use colored::*;
