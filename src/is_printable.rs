@@ -37,20 +37,20 @@ mod test {
 
     #[test]
     fn unprintable() {
-        assert!(!'\u{7}'.is_printable());
-        assert!(!'\u{7}'.to_string().is_printable());
-        assert!(!'\u{7}'.to_string().into_boxed_str().is_printable());
-        assert!(!'\u{7}'.to_string().as_str().is_printable());
-        assert!(!(*'\u{7}'.to_string().as_str()).is_printable());
+        assert!(!'\u{7}'.is_printable()); // char
+        assert!(!'\u{7}'.to_string().is_printable()); // String
+        assert!(!'\u{7}'.to_string().into_boxed_str().is_printable()); // Box<str>
+        assert!(!'\u{7}'.to_string().as_str().is_printable()); // &str
+        assert!(!(*'\u{7}'.to_string().as_str()).is_printable()); // str
     }
 
     #[test]
     fn printable() {
-        assert!('\u{30}'.is_printable());
-        assert!('\u{30}'.to_string().is_printable());
-        assert!('\u{30}'.to_string().into_boxed_str().is_printable());
-        assert!('\u{30}'.to_string().as_str().is_printable());
-        assert!((*'\u{30}'.to_string().as_str()).is_printable());
+        assert!('\u{30}'.is_printable()); // char
+        assert!('\u{30}'.to_string().is_printable()); // String
+        assert!('\u{30}'.to_string().into_boxed_str().is_printable()); // Box<str>
+        assert!('\u{30}'.to_string().as_str().is_printable()); // &str
+        assert!((*'\u{30}'.to_string().as_str()).is_printable()); // str
     }
 
     #[test]
