@@ -6,45 +6,32 @@ pub trait IsPrintable {
 }
 
 impl IsPrintable for char {
-    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         let is_typical_printable = self.escape_debug().count() == 1;
         let is_special_printable = matches!(self, '\'' | '\"' | '\\');
-        let is_printable = is_typical_printable || is_special_printable;
-
-        is_printable
+        is_typical_printable || is_special_printable
     }
 }
 
 impl IsPrintable for dyn Deref<Target = str> {
-    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
-        let is_printable = self.chars().all(|ch| ch.is_printable());
-
-        is_printable
+        self.chars().all(|ch| ch.is_printable())
     }
 }
 
 impl IsPrintable for String {
-    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
-        let is_printable = self.chars().all(|ch| ch.is_printable());
-
-        is_printable
+        self.chars().all(|ch| ch.is_printable())
     }
 }
 
 impl IsPrintable for str {
-    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
-        let is_printable = self.chars().all(|ch| ch.is_printable());
-
-        is_printable
+        self.chars().all(|ch| ch.is_printable())
     }
 }
 
 impl<T: ?Sized + IsPrintable> IsPrintable for &T {
-    /// Returns `true` if `self` is printable.
     fn is_printable(&self) -> bool {
         (**self).is_printable()
     }
