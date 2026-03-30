@@ -67,18 +67,12 @@ mod test {
 
     #[test]
     fn unprintable() {
-        let character = '\u{7}';
-
-        let is_printable = character.is_printable();
-        assert!(!is_printable);
+        assert!(!'\u{7}'.is_printable());
     }
 
     #[test]
     fn printable() {
-        let character = '\u{30}';
-
-        let is_printable = character.is_printable();
-        assert!(is_printable);
+        assert!('\u{30}'.is_printable());
     }
 
     #[test]
