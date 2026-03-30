@@ -39,6 +39,7 @@ mod test {
     fn unprintable() {
         assert!(!'\u{7}'.is_printable());
         assert!(!'\u{7}'.to_string().is_printable());
+        assert!(!'\u{7}'.to_string().into_boxed_str().is_printable());
         assert!(!'\u{7}'.to_string().as_str().is_printable());
         assert!(!(*'\u{7}'.to_string().as_str()).is_printable());
     }
@@ -47,6 +48,7 @@ mod test {
     fn printable() {
         assert!('\u{30}'.is_printable());
         assert!('\u{30}'.to_string().is_printable());
+        assert!('\u{30}'.to_string().into_boxed_str().is_printable());
         assert!('\u{30}'.to_string().as_str().is_printable());
         assert!((*'\u{30}'.to_string().as_str()).is_printable());
     }
